@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/activity_bg">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Theme.toolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Outrange" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/lightBg"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:elevation="4dp"
+            android:orientation="vertical">
+
+            <cn.byteroute.io.ui.widget.SwitchProgress
+                android:id="@+id/ringProgress"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/bt_connect"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/bt_connect"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:background="@drawable/connect_selector"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="连接"
+                android:textColor="#FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ringProgress" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <!--        <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:divider="@drawable/shape_divider"
+                    app:dividerPadding="10dp"
+                    app:showDividers="end|middle">
+
+                    <com.outrange.proxy.ui.widget.LayoutItem
+                        style="@style/item_bg_click"
+                        android:id="@+id/selectServer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hide_Des="true"
+                        app:hide_Switch="true"
+                        app:icon_drawable="@drawable/ic_icon_list"
+                        app:item_Text="选择服务器" />
+
+                    <com.outrange.proxy.ui.widget.LayoutItem
+                        style="@style/item_bg_click"
+                        android:id="@+id/conntectTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hide_Des="true"
+                        app:hide_Next="true"
+                        app:hide_Switch="true"
+                        app:icon_drawable="@drawable/ic_connect_test"
+                        app:item_Text="延迟测试" />
+
+                    <com.outrange.proxy.ui.widget.LayoutItem
+                        style="@style/item_bg_click"
+                        android:id="@+id/router"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hide_Des="true"
+                        app:hide_Switch="true"
+                        app:icon_drawable="@drawable/ic_router"
+                        app:item_Text="路由追踪" />
+
+                    <com.outrange.proxy.ui.widget.LayoutItem
+                        style="@style/item_bg_click"
+                        android:id="@+id/settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hide_Des="true"
+                        app:hide_Switch="true"
+                        app:icon_drawable="@drawable/ic_router"
+                        app:item_Text="设置中心" />
+
+                    <com.outrange.proxy.ui.widget.LayoutItem
+                        style="@style/item_bg_click"
+                        android:id="@+id/tutorial"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hide_Des="true"
+                        app:hide_Switch="true"
+                        app:icon_drawable="@drawable/ic_router"
+                        app:item_Text="帮助文档" />
+                </androidx.appcompat.widget.LinearLayoutCompat>-->
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        style="@style/navigationViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/header_layout"
+        app:menu="@menu/menu_left" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

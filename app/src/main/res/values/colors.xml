@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#FF4092F5</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="textTipColor">#66000000</color>
+    <color name="item_pressed">#334092F5</color>
+    <color name="item_enabled">#33212121</color>
+
+    <color name="default_bg_color">#ab47bc</color>
+    <color name="default_title_color">#ffffff</color>
+    <color name="default_message_color">#ffffff</color>
+    <color name="default_action_color">#26a69a</color>
+    <color name="transparent">#00000000</color>
+    <color name="text_color_20">#33212121</color>
+    <color name="text_color_40">#66212121</color>
+    <color name="text_color_60">#99212121</color>
+    <color name="text_color_80">#CC212121</color>
+    <color name="text_color_100">#FF212121</color>
+</resources>

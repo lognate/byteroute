@@ -1,0 +1,20 @@
+[
+  {
+    "remoteRemark": "美国-洛杉矶-1Gbps",
+    "remoteAddr": "baiducc.top",
+    "remotePort": 443,
+    "password": "qwertyuiop"
+  },
+  {
+    "remoteRemark": "洛杉矶-1Gbps",
+    "remoteAddr": "outagent.xyz",
+    "remotePort": 443,
+    "password": "qwertyuiop"
+  },
+  {
+    "remoteRemark": "芝加哥-5Mbps",
+    "remoteAddr": "outgle.xyz",
+    "remotePort": 443,
+    "password": "qwertyuiop"
+  }
+]

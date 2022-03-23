@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Byteroute</string>
+    <string name="app_proxy">VPN代理</string>
+    <string name="drawer_open">打开</string>
+    <string name="drawer_close">关闭</string>
+    <string name="notification_channel_id">notify</string>
+    <string name="notification_channel_name">通知</string>
+    <string name="notification_starting_service">开启服务</string>
+    <string name="traffic">%1$s↑\t%2$s↓</string>
+    <string name="speed">%s/s</string>
+    <string name="shortcuts_short_label_settings">设置</string>
+    <string name="shortcuts_long_label_settings">设置中心</string>
+    <string name="shortcuts_short_label_scan">扫一扫</string>
+    <string name="shortcuts_long_label_scan">二维码扫描</string>
+    <string name="shortcuts_short_label_toggle">开关</string>
+    <string name="shortcuts_long_label_toggle">开关切换</string>
+    <string name="search">请输入应用名或包名</string>
+    <string name="quick_toggle">请输入应用名或包名</string>
+
+    <string name="action">ACTION</string>
+</resources>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="cn.byteroute.io"
+    tools:ignore="Instantiatable">
+
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission
+        android:name="android.permission.QUERY_ALL_PACKAGES"
+        tools:ignore="QueryAllPackagesPermission" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.BIND_VPN_SERVICE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name=".ByteApp"
+        android:allowBackup="true"
+        android:extractNativeLibs="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Outrange">
+        <activity
+            android:name=".ui.AddConfigActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="io.sentry.dsn"
+            android:value="https://6e81853255ab4188af0bf8764e3a3f2d@o572960.ingest.sentry.io/5722979" />
+
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.ToggleActivity"
+            android:exported="false"
+            android:label="@string/quick_toggle"
+            android:launchMode="singleTask"
+            android:process=":proxy"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.CREATE_SHORTCUT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.DocumentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.TraceRouteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.SelectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ScanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.FunctionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.MultiActivity"
+            android:screenOrientation="portrait" /> <!-- https://sentry.io/organizations/ximen/issues/ -->
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.ProxyAppActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.huawei.hms.hmsscankit.ScanKitActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="MissingClass" />
+
+        <service
+            android:name=".service.ByterouteTileService"
+            android:directBootAware="true"
+            android:exported="true"
+            android:icon="@drawable/ic_vpn"
+            android:label="@string/app_proxy"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":tile"
+            tools:targetApi="N">
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.ProxyService"
+            android:exported="false"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:process=":proxy"
+            tools:targetApi="N">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+                <action android:name="com.outrange.proxy.STOP_SERVICE" />
+                <action android:name="com.outrange.proxy.BIND_SERVICE" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:ignore="MissingClass"
+            tools:node="merge">
+            <meta-data
+                android:name="cn.byteroute.io.ByteInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>

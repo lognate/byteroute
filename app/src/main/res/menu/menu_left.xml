@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/g1">
+        <item
+            android:id="@+id/score"
+            android:icon="@drawable/ic_score"
+            android:title="应用评分" />
+        <item
+            android:id="@+id/share_1"
+            android:icon="@drawable/ic_share"
+            android:title="分享给朋友" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/ic_email"
+            android:title="反馈给我" />
+        <item
+            android:id="@+id/share_2"
+            android:icon="@drawable/icon_settings"
+            android:title="设置中心" />
+    </group>
+    <group android:id="@+id/g2">
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/ic_help"
+            android:title="帮助中心" />
+        <item
+            android:id="@+id/privacy"
+            android:icon="@drawable/ic_secret"
+            android:title="隐私政策" />
+        <item
+            android:id="@+id/edition"
+            android:icon="@drawable/ic_edition"
+            android:title="版本更新" />
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_about"
+            android:title="关于" />
+    </group>
+</menu>
+
+

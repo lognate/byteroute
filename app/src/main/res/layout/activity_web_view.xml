@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/activity_bg"
+    tools:context=".ui.WebViewActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar_web" />
+    <cn.byteroute.io.ui.widget.SmoothProgressBar
+        android:id="@+id/progress"
+        style="@style/SmoothProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="2.5dp"
+        android:indeterminate="true"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
